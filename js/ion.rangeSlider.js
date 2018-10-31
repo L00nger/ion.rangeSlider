@@ -330,7 +330,9 @@
             onStart: null,
             onChange: null,
             onFinish: null,
-            onUpdate: null
+            onUpdate: null,
+            
+            noRange: false
         };
 
 
@@ -535,6 +537,11 @@
                 this.$cache.shad_to = this.$cache.cont.find(".shadow-to");
 
                 this.setTopHandler();
+            }
+
+            if (this.options.noRange===true) {
+                this.$cache.edge.hide();
+                this.$cache.bar.hide();
             }
 
             if (this.options.hide_from_to) {
